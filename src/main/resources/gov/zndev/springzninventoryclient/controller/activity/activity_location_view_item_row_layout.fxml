@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="46.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="item_name" layoutX="14.0" layoutY="3.0" prefHeight="20.0" prefWidth="457.0" text="Blue Label Cap">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="quantity" layoutX="14.0" layoutY="23.0" prefHeight="17.0" prefWidth="457.0" text="Quantity: 0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Button fx:id="btnViewItem" layoutX="479.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="View" />
+      <Button fx:id="btnExport" layoutX="559.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="Export" />
+   </children>
+</AnchorPane>

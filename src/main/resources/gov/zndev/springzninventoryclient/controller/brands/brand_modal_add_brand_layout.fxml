@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="345.0" prefWidth="445.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gov.zndev.springzninventoryclient.controller.brands.ModalAddBrandCtrl">
+   <children>
+      <TextField fx:id="brand_name" layoutX="27.0" layoutY="54.0" prefHeight="25.0" prefWidth="389.0" promptText="Enter brand name . . ." style="-fx-border-color: grey;" />
+      <TextArea fx:id="brand_description" layoutX="27.0" layoutY="115.0" prefHeight="173.0" prefWidth="389.0" promptText="Add Description here . . ." style="-fx-border-color: grey;" />
+      <Label layoutX="27.0" layoutY="25.0" text="Brand name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="91.0" text="Description">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_save" buttonType="RAISED" layoutX="329.0" layoutY="305.0" prefHeight="27.0" prefWidth="87.0" style="-fx-border-color: grey;" text="Save" />
+   </children>
+</AnchorPane>

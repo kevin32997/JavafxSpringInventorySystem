@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXBadge?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="602.0" prefWidth="866.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventorypos.administrator.ExportItemController">
+    <children>
+        <Pane fx:id="headerPane" prefHeight="71.0" prefWidth="868.0" style="-fx-background-color: black;">
+            <children>
+                <ImageView fitHeight="49.0" fitWidth="311.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../icons/tdp_invert.png" />
+                    </image>
+                </ImageView>
+                <HBox fx:id="headerBtnContainer" layoutX="562.0" layoutY="-4.0" prefHeight="71.0" prefWidth="306.0">
+                    <children>
+                        <JFXButton fx:id="notificationBtn" onAction="#notificationBtnClick" prefHeight="74.0" prefWidth="74.0" ripplerFill="WHITE" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 20;">
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                            <graphic>
+                                <JFXBadge text="123" />
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="fullScreenBtn" onAction="#fullScreenBtnEvent" prefHeight="74.0" prefWidth="74.0" ripplerFill="WHITE" />
+                        <JFXButton fx:id="reportBtn" onAction="#reportBtnEvent" prefHeight="74.0" prefWidth="74.0" ripplerFill="WHITE" />
+                        <JFXButton fx:id="userBtn" onAction="#userBtnEvent" prefHeight="74.0" prefWidth="74.0" ripplerFill="WHITE" />
+                    </children>
+                </HBox>
+            </children>
+        </Pane>
+        <HBox fx:id="mainContainer" layoutY="73.0" prefHeight="529.0" prefWidth="925.0">
+            <children>
+                <VBox fx:id="navBar" prefHeight="529.0" prefWidth="280.0" style="-fx-background-color: #212121;">
+                    <children>
+                        <HBox fx:id="navBarHeader" prefHeight="53.0" prefWidth="280.0">
+                            <children>
+                                <Label fx:id="userNameLabel" alignment="CENTER" prefHeight="57.0" prefWidth="219.0" text="User" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="22.0" />
+                                    </font>
+                                </Label>
+                                <JFXHamburger fx:id="burger" prefHeight="58.0" prefWidth="63.0" style="-fx-background-color: white;" />
+                            </children>
+                        </HBox>
+                        <JFXButton fx:id="usersBtn" alignment="BASELINE_LEFT" onAction="#userBtnTabEvent" prefHeight="49.0" prefWidth="282.0" style="-fx-background-color: black;" text="                Users" textFill="WHITE">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </JFXButton>
+                        <Pane fx:id="userPane" prefHeight="0.0" prefWidth="280.0" visible="false">
+                            <children>
+                                <VBox layoutX="-3.0" layoutY="-2.0" prefHeight="71.0" prefWidth="280.0">
+                                    <children>
+                                        <JFXButton onAction="#viewUsers" prefHeight="35.0" prefWidth="280.0" style="-fx-background-color: black;" text="View Users" textFill="WHITE" />
+                                        <JFXButton onAction="#addUser" prefHeight="35.0" prefWidth="280.0" style="-fx-background-color: black;" text="Add new User" textFill="WHITE" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </Pane>
+                        <JFXButton fx:id="itemBtn" alignment="BASELINE_LEFT" onAction="#itemBtnTabEvent" prefHeight="49.0" prefWidth="283.0" style="-fx-background-color: black;" text="                Items " textAlignment="CENTER" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </JFXButton>
+                        <Pane fx:id="itemPane" prefHeight="0.0" prefWidth="280.0" visible="false">
+                            <children>
+                                <VBox layoutX="-3.0" layoutY="-2.0" prefHeight="71.0" prefWidth="280.0">
+                                    <children>
+                                        <JFXButton onAction="#itemList" prefHeight="35.0" prefWidth="280.0" style="-fx-background-color: black;" text="Item List" textFill="WHITE" />
+                                        <JFXButton onAction="#addItem" prefHeight="35.0" prefWidth="280.0" style="-fx-background-color: black;" text="Add Item" textFill="WHITE" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </Pane>
+                        <JFXButton fx:id="salesBtn" alignment="BASELINE_LEFT" onAction="#salesBtnTabEvent" prefHeight="49.0" prefWidth="283.0" style="-fx-background-color: black;" text="                Sales" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                        </JFXButton>
+                        <Pane fx:id="salesPane" prefHeight="0.0" prefWidth="280.0" visible="false">
+                            <children>
+                                <VBox layoutX="-3.0" layoutY="-2.0" prefHeight="71.0" prefWidth="280.0">
+                                    <children>
+                                        <JFXButton onAction="#makeSale" prefHeight="35.0" prefWidth="280.0" style="-fx-background-color: black;" text="Make Sale" textFill="WHITE" />
+                                        <JFXButton onAction="#viewSales" prefHeight="35.0" prefWidth="280.0" style="-fx-background-color: black;" text="Sales" textFill="WHITE" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </Pane>
+                        <JFXButton fx:id="importBtn" alignment="BASELINE_LEFT" onAction="#importBtnTabEvent" prefHeight="49.0" prefWidth="282.0" style="-fx-background-color: black;" text="                Import" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </JFXButton>
+                        <Pane fx:id="importPane" prefHeight="0.0" prefWidth="280.0" visible="false">
+                            <children>
+                                <VBox layoutX="-3.0" layoutY="-2.0" prefHeight="71.0" prefWidth="280.0">
+                                    <children>
+                                        <JFXButton onAction="#viewImports" prefHeight="35.0" prefWidth="280.0" style="-fx-background-color: black;" text="View Imports" textFill="WHITE" />
+                                        <JFXButton onAction="#importItem" prefHeight="35.0" prefWidth="280.0" style="-fx-background-color: black;" text="Import Item" textFill="WHITE" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </Pane>
+                        <JFXButton fx:id="exportBtn" alignment="BASELINE_LEFT" onAction="#exportBtnTabEvent" prefHeight="49.0" prefWidth="280.0" style="-fx-background-color: black;" text="                Export" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </JFXButton>
+                        <Pane fx:id="exportPane" prefHeight="0.0" prefWidth="280.0" visible="false">
+                            <children>
+                                <VBox layoutX="-3.0" layoutY="-2.0" prefHeight="71.0" prefWidth="280.0">
+                                    <children>
+                                        <JFXButton onAction="#viewExport" prefHeight="35.0" prefWidth="280.0" style="-fx-background-color: black;" text="View Exports" textFill="WHITE" />
+                                        <JFXButton onAction="#exportItem" prefHeight="35.0" prefWidth="280.0" style="-fx-background-color: black;" text="Export Item" textFill="WHITE" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </Pane>
+                        <JFXButton fx:id="othersBtn" alignment="BASELINE_LEFT" onAction="#othersBtnTabEvent" prefHeight="49.0" prefWidth="283.0" style="-fx-background-color: black;" text="                Others" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                        </JFXButton>
+                        <Pane fx:id="othersPane" prefHeight="0.0" prefWidth="280.0" visible="false">
+                            <children>
+                                <VBox layoutX="-3.0" layoutY="-2.0" prefHeight="114.0" prefWidth="280.0">
+                                    <children>
+                                        <JFXButton onAction="#locationList" prefHeight="35.0" prefWidth="280.0" style="-fx-background-color: black;" text="Locations" textFill="WHITE" />
+                                        <JFXButton onAction="#brandList" prefHeight="35.0" prefWidth="280.0" style="-fx-background-color: black;" text="Brand" textFill="WHITE" />
+                                        <JFXButton onAction="#categoryList" prefHeight="35.0" prefWidth="280.0" style="-fx-background-color: black;" text="Category" textFill="WHITE" />
+                                        <JFXButton onAction="#unitList" prefHeight="35.0" prefWidth="280.0" style="-fx-background-color: black;" text="Unit" textFill="WHITE" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </Pane>
+                    </children>
+                </VBox>
+                <StackPane fx:id="container" opacity="0.0" prefHeight="529.0" prefWidth="648.0" style="-fx-background-color: #121212;">
+                    <children>
+                        <Pane fx:id="pane" prefHeight="529.0" prefWidth="566.0" style="-fx-background-color: #121212;">
+                            <children>
+                                <Label fx:id="pageLabel" prefHeight="67.0" prefWidth="1185.0" style="-fx-background-color: #212121;" text="  Export Items" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="30.0" />
+                                    </font>
+                                    <effect>
+                                        <DropShadow blurType="GAUSSIAN" />
+                                    </effect>
+                                </Label>
+                                <VBox fx:id="parentContainer" layoutY="88.0" prefHeight="440.0" prefWidth="1185.0" style="-fx-background-color: #;">
+                                    <children>
+                                        <HBox fx:id="topContainer" prefHeight="63.0" prefWidth="1185.0">
+                                            <children>
+                                                <HBox fx:id="topChildContainer" prefHeight="100.0" prefWidth="200.0">
+                                                    <children>
+                                                        <JFXTextField fx:id="customerName" focusColor="WHITE" labelFloat="true" maxWidth="300.0" minWidth="296.0" prefHeight="37.0" prefWidth="300.0" promptText="Supplier name" style="-fx-text-fill: white;" unFocusColor="WHITE">
+                                                            <font>
+                                                                <Font size="15.0" />
+                                                            </font>
+                                                            <HBox.margin>
+                                                                <Insets left="50.0" top="30.0" />
+                                                            </HBox.margin>
+                                                        </JFXTextField>
+                                                        <JFXTextField fx:id="searchItem" focusColor="WHITE" labelFloat="true" maxWidth="629.0" minWidth="296.0" onKeyPressed="#press" onKeyReleased="#release" prefHeight="37.0" prefWidth="300.0" promptText="Add item" style="-fx-text-fill: white;" unFocusColor="WHITE">
+                                                            <font>
+                                                                <Font size="15.0" />
+                                                            </font>
+                                                            <HBox.margin>
+                                                                <Insets left="30.0" top="30.0" />
+                                                            </HBox.margin>
+                                                        </JFXTextField>
+                                                    </children>
+                                                </HBox>
+                                                <JFXComboBox fx:id="cbxLocation" prefHeight="25.0" prefWidth="270.0" promptText="Location" style="-fx-background-color: #121212;">
+                                                    <HBox.margin>
+                                                        <Insets right="50.0" top="30.0" />
+                                                    </HBox.margin>
+                                                </JFXComboBox>
+                                            </children>
+                                        </HBox>
+                                        <VBox fx:id="centerContainer" prefHeight="284.0" prefWidth="1185.0">
+                                            <children>
+                                                <TableView fx:id="mainTable" editable="true" onKeyReleased="#tableEvents" prefHeight="199.0" prefWidth="1185.0" stylesheets="@../../css/tableviewCss.css">
+                                                    <columnResizePolicy>
+                                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                    </columnResizePolicy>
+                                                    <columns>
+                                                        <TableColumn fx:id="clname" prefWidth="320.0" text="Name" />
+                                                        <TableColumn fx:id="clbrand" prefWidth="361.0" text="Brand" />
+                                                        <TableColumn fx:id="clsrp" prefWidth="71.0" text="SRP" />
+                                                        <TableColumn fx:id="clquantity" prefWidth="75.0" text="Quantity" />
+                                                        <TableColumn fx:id="cltotal" prefWidth="75.0" text="Subtotal" />
+                                                    </columns>
+                                                    <VBox.margin>
+                                                        <Insets left="50.0" right="50.0" />
+                                                    </VBox.margin>
+                                                    <contextMenu>
+                                                        <ContextMenu fx:id="rightClickMenu">
+                                                            <items>
+                                                                <MenuItem mnemonicParsing="false" onAction="#removeOptionEvent" text="Remove" />
+                                                                <MenuItem mnemonicParsing="false" onAction="#addOptionEvent" text="Add" />
+                                                                <MenuItem mnemonicParsing="false" text="Subtract" />
+                                                            </items>
+                                                        </ContextMenu>
+                                                    </contextMenu>
+                                                </TableView>
+                                            </children>
+                                        </VBox>
+                                        <HBox prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <HBox fx:id="buttomContainer" prefHeight="95.0" prefWidth="917.0">
+                                                    <children>
+                                                        <JFXTextArea fx:id="remarks" focusColor="WHITE" labelFloat="true" maxWidth="345.0" minWidth="233.0" prefHeight="88.0" prefWidth="345.0" promptText="Remarks" stylesheets="@../../css/textAreaCss.css" text="Remarks . . . &#10;" unFocusColor="WHITE">
+                                                            <font>
+                                                                <Font size="15.0" />
+                                                            </font>
+                                                            <HBox.margin>
+                                                                <Insets left="50.0" top="30.0" />
+                                                            </HBox.margin>
+                                                        </JFXTextArea>
+                                                        <JFXTextField fx:id="total" editable="false" focusColor="WHITE" labelFloat="true" maxWidth="296.0" minWidth="296.0" prefHeight="31.0" prefWidth="296.0" promptText="Total" style="-fx-text-fill: white;" unFocusColor="WHITE">
+                                                            <font>
+                                                                <Font size="15.0" />
+                                                            </font>
+                                                            <HBox.margin>
+                                                                <Insets top="50.0" />
+                                                            </HBox.margin>
+                                                        </JFXTextField>
+                                                    </children>
+                                                </HBox>
+                                                <JFXButton fx:id="btnSubmit" buttonType="RAISED" onAction="#submit" prefHeight="83.0" prefWidth="216.0" ripplerFill="#18afc6" style="-fx-background-color: #212121;" text="Submit" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="23.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets right="50.0" top="30.0" />
+                                                    </HBox.margin>
+                                                </JFXButton>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <ListView fx:id="list" layoutX="370.0" layoutY="139.0" onKeyPressed="#press" onKeyReleased="#release" onMouseClicked="#addItemByClick" prefHeight="125.0" prefWidth="317.0" visible="false" />
+                            </children>
+                        </Pane>
+                    </children>
+                </StackPane>
+            </children>
+        </HBox>
+        <VBox fx:id="dropDown" prefHeight="114.0" prefWidth="203.0" visible="false">
+            <children>
+                <JFXButton onAction="#userSettingEvent" prefHeight="37.0" prefWidth="206.0" text="User Setting" textFill="WHITE" />
+                <JFXButton onAction="#logoutEvent" prefHeight="37.0" prefWidth="207.0" text="Logout" textFill="WHITE" />
+            </children>
+        </VBox>
+    </children>
+    <stylesheets>
+        <URL value="@../../css/style.css" />
+        <URL value="@../../css/snackBarCss.css" />
+    </stylesheets>
+</AnchorPane>

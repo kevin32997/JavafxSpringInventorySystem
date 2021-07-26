@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1004.0" prefWidth="1059.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gov.zndev.springzninventoryclient.controller.items.AddItemCtrl">
+   <children>
+      <ScrollPane fx:id="scroll_pane" layoutX="6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <AnchorPane fx:id="main_pane" prefHeight="761.0" prefWidth="964.0">
+               <children>
+                  <Label layoutX="26.0" layoutY="58.0" text="Basic Info">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="51.0" layoutY="95.0" text="Name" />
+                  <TextField fx:id="name" layoutX="100.0" layoutY="91.0" prefHeight="25.0" prefWidth="375.0" />
+                  <Label layoutX="52.0" layoutY="130.0" text="Brand" />
+                  <TextField fx:id="brand" layoutX="100.0" layoutY="126.0" prefHeight="25.0" prefWidth="375.0" promptText="Search brand . . ." />
+                  <Label layoutX="56.0" layoutY="165.0" text="Type" />
+                  <TextField fx:id="type" layoutX="100.0" layoutY="161.0" prefHeight="25.0" prefWidth="375.0" promptText="Search Type . . ." />
+                  <TextArea fx:id="description" layoutX="26.0" layoutY="280.0" prefHeight="240.0" prefWidth="456.0" />
+                  <JFXButton fx:id="btn_save" layoutX="372.0" layoutY="531.0" onAction="#onSave" prefHeight="25.0" prefWidth="110.0" style="-fx-border-color: grey;" text="Save" />
+                  <TextField fx:id="model" layoutX="100.0" layoutY="198.0" prefHeight="25.0" prefWidth="375.0" />
+                  <Label layoutX="50.0" layoutY="202.0" text="Model" />
+                  <Label layoutX="28.0" layoutY="256.0" text="Add Description">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="492.0" layoutY="125.0" onAction="#onCreateBrand" prefHeight="25.0" prefWidth="110.0" style="-fx-border-color: grey;" text="Create Brand" />
+                  <JFXButton layoutX="492.0" layoutY="160.0" onAction="#onCreateType" prefHeight="25.0" prefWidth="110.0" style="-fx-border-color: grey;" text="Create Type" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <Label layoutX="977.0" layoutY="14.0" prefHeight="38.0" prefWidth="169.0" text="CREATE ITEM" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="15.0">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

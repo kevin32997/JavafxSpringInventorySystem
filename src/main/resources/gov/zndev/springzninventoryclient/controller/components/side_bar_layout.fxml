@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="733.0" prefWidth="215.0" style="-fx-border-color: #8e8e8e;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gov.zndev.springzninventoryclient.controller.components.SideBarCtrl">
+   <children>
+      <VBox prefHeight="733.0" prefWidth="245.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton fx:id="btnDashboard" prefHeight="25.0" prefWidth="313.0" style="-fx-background-color: grey; -fx-text-fill: white; -fx-border-color: black;" text="DASHBOARD">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnInventory" prefHeight="25.0" prefWidth="313.0" style="-fx-background-color: grey; -fx-text-fill: white; -fx-border-color: black;" text="INVENTORY">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnItems" prefHeight="25.0" prefWidth="313.0" style="-fx-background-color: grey; -fx-text-fill: white; -fx-border-color: black;" text="ITEM">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <VBox fx:id="items_child_vbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="215.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <JFXButton fx:id="btnViewItems" opacity="0.0" prefHeight="44.0" prefWidth="215.0" text="View Items">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnCreateItem" opacity="0.0" prefHeight="44.0" prefWidth="215.0" text="Create Item">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <JFXButton fx:id="btnBrands" prefHeight="25.0" prefWidth="313.0" style="-fx-background-color: grey; -fx-text-fill: white; -fx-border-color: black;" text="BRAND">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnType" prefHeight="25.0" prefWidth="313.0" style="-fx-background-color: grey; -fx-text-fill: white; -fx-border-color: black;" text="TYPE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnLocations" prefHeight="25.0" prefWidth="313.0" style="-fx-background-color: grey; -fx-text-fill: white; -fx-border-color: black;" text="LOCATION">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnActivity" prefHeight="25.0" prefWidth="313.0" style="-fx-background-color: grey; -fx-text-fill: white; -fx-border-color: black;" text="ACTIVITY">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <VBox fx:id="inventory_child_vbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="215.0">
+               <children>
+                  <JFXButton fx:id="btnImport" opacity="0.0" prefHeight="44.0" prefWidth="215.0" text="Import">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnExport" opacity="0.0" prefHeight="44.0" prefWidth="215.0" text="Export">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnActivities" opacity="0.0" prefHeight="44.0" prefWidth="215.0" text="Activities">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <JFXButton fx:id="btnUsers" prefHeight="25.0" prefWidth="313.0" style="-fx-background-color: grey; -fx-text-fill: white; -fx-border-color: black;" text="USERS">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <VBox fx:id="user_child_vbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="215.0">
+               <children>
+                  <JFXButton fx:id="btnUserList" opacity="0.0" prefHeight="44.0" prefWidth="215.0" text="User List">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnCreateUser" opacity="0.0" prefHeight="44.0" prefWidth="215.0" text="Create User">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <JFXButton fx:id="btnReport" prefHeight="25.0" prefWidth="313.0" style="-fx-background-color: grey; -fx-text-fill: white; -fx-border-color: black;" text="REPORTING">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></JFXButton>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

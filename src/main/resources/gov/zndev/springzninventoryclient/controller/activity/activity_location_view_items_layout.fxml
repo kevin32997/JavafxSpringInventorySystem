@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="480.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.inventory.ViewLocationItemsCtrl">
+   <children>
+      <TextField fx:id="search_item" layoutX="442.0" layoutY="39.0" prefHeight="25.0" prefWidth="243.0" promptText="Search item . . . ." />
+      <ListView fx:id="item_list" layoutX="34.0" layoutY="76.0" prefHeight="389.0" prefWidth="660.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" />
+      <Label fx:id="location_name" layoutX="24.0" layoutY="13.0" text="LOCATION ITEMS">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="total_quantity" layoutX="25.0" layoutY="45.0" text="Total Items Count: 1000" />
+   </children>
+</AnchorPane>
